@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link,useParams,useHistory} from 'react-router-dom'
-import {Button} from 'antd'
+import Button from '@mui/material/Button';
 import 'antd/dist/antd.css'
 import '../less/app.css'
 export default function Detail(){
@@ -10,7 +10,7 @@ export default function Detail(){
         <h1>这里是detail页面</h1>
         <Link to="/login">点击跳转到登陆页面</Link><br/>
         <p>参数：</p>
-        {params.id}<br/>
+        <br/>
         <Button type="primary" onClick={()=>{
             history.push('/')
         }}>跳转首页</Button>

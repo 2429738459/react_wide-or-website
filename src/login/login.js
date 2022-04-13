@@ -1,59 +1,77 @@
 import React,{useState} from 'react';
-import {Form,Input,Button} from 'antd'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import {useHistory} from 'react-router-dom'
 import axios from 'axios';
-import qwer from '../Imge/123.png'
-const FormItem = Form.Item;
+import { color } from '@mui/system';
+import { ButtonGroup } from '@mui/material';
+
 
 export default function Login(){
     const history = useHistory();
     const [name,setName] = useState('');
     const [pwd,setPwd] = useState('');
-        return <div className="login-container">
-            <img src={qwer} className="container_img"/>
-            <h2>欢迎登录</h2>
-            <Form className="login-form">
-                <FormItem>
-                <Input placeholder="请输入用户名" type="text" onChange={(event)=>{
-                setName(event.target.value);
-                }} maxLength={10}/>
-                </FormItem>
-                <FormItem>
-                <Input placeholder="请输入密码" type="password" onChange={(event)=>{
-                setPwd(event.target.value);
-                }} maxLength={18}/>
-                    </FormItem>
-                    <label>账号:{name},密码:{pwd}</label>
-                    <FormItem>
-                    <Button type="primary" onClick={
-                        function a(){
-                            if(name==="qqqq"&&pwd==="111111"){
-                                login(name,pwd).then((response)=>{
-                                    let res = response.data;
-                                    if(res.code === 0){
-                                        history.push('/home')
-                                    }
-                                })
-                            }
-                        }
-                        }>登录</Button>
-                    </FormItem>
-                    <FormItem>
-                    <Button type="primary" onClick={
-                        function a(){
-                            if(name==="qqqq"&&pwd==="111111"){
-                                login(name,pwd).then((response)=>{
-                                    let res = response.data;
-                                    if(res.code === 0){
-                                        history.push('/signIn')
-                                    }
-                                })
-                            }
-                        }
-                        }>注册</Button>
-                    </FormItem>
-            </Form>
-    </div>
+return <Box
+        className='dlym'
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1,  },
+        }}
+        noValidate
+        autoComplete="off"
+    >
+        <h2 style={{color:"#fff"}} className = 'srk'>
+            欢迎登录
+            <br/>
+            <br/>
+        <TextField
+          style={{width:"300px"}}
+          label="请输入用户名..." 
+          onChange={(event)=>{setName(event.target.value);}} maxLength={10}
+          variant="standard"
+          focused
+        />
+        <br/>
+        <br/>
+        <TextField
+        style={{width:"300px"}}
+          label="请输入密码..." 
+          onChange={(event)=>{setPwd(event.target.value);}} maxLength={18}
+          variant="standard"
+          focused
+        />
+            <br/>
+            <label>账号:{name}密码:{pwd}</label>
+            <br/>
+            <br/>
+                    <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
+                            function (){
+                            if(name==="qq"&&pwd==="111"){
+                                    login(name,pwd).then((response)=>{
+                                       let res = response.data;
+                                        if(res.code === 0){
+                                           history.push('/home')
+                                        }
+                                    })
+                                }
+                            }}>
+                        </ButtonGroup>
+                         <br/>
+                         <ButtonGroup>
+                        <Button type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
+                            function a(){
+                            
+                                       
+                        
+                                           history.push('/signIn')
+                                      
+                                    
+                            }}>注册</Button>
+                        </ButtonGroup>
+                         </h2>
+        </Box>
+            
 }
 
 function login (name,pwd) {
