@@ -11,19 +11,23 @@ import imgone from'../Imge/imgone.jpeg';
 import imgtwo from'../Imge/imgtwo.jpeg';
 import imgthree from'../Imge/imgthere.jpeg';
 import Paper from '@mui/material/Paper';
+import logo from '../Imge/gslogo.jpeg';
 
 export default function Login(){
     const history = useHistory();
-    const [name,setName] = useState('');
-    const [pwd,setPwd] = useState('');
+    const [usercode,setUsercode] = useState('');
+    const [userpwd,setUserpwd] = useState('');
+    
 return <Box
         className='dlym'
         component="form"
         noValidate
         autoComplete="off"
     >
-        <h1 style={{color:"#000"}} className="sygs">
+        <img src={logo} style={{ width:'3%'}}/>
+        <h1 style={{color:"#000"}} className="sygs" >
             沈阳广合科技发展有限公司
+            </h1>
 <Carousel plugins={['arrows']} className="lbt" plugins={[
     'clickToChange',
     'centered',
@@ -33,14 +37,12 @@ return <Box
        numberOfSlides: 1
       }
     },
-]}
-
->
+]}>
   <img src={imgone} className="imge" />
   <img src={imgtwo} className="imge" />
   <img src={imgthree} className="imge"/>
 </Carousel>
-</h1>
+
 <Paper elevation={3} >
         <h2 style={{color:"#fff"}} className = 'srk'>
             欢迎登录
@@ -49,7 +51,7 @@ return <Box
         <TextField
           style={{width:"300px"}}
           label="请输入用户名..." 
-          onChange={(event)=>{setName(event.target.value);}} maxLength={10}
+          onChange={(event)=>{setUsercode(event.target.value);}} maxLength={10}
           variant="standard"
           focused
         />
@@ -58,18 +60,18 @@ return <Box
         <TextField
         style={{width:"300px"}}
           label="请输入密码..." 
-          onChange={(event)=>{setPwd(event.target.value);}} maxLength={18}
+          onChange={(event)=>{setUserpwd(event.target.value);}} maxLength={18}
           variant="standard"
           focused
         />
             <br/>
-            <label>账号:{name}密码:{pwd}</label>
+            <label>账号:{usercode}密码:{userpwd}</label>
             <br/>
             <br/>
                     <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
                             function (){
-                            if(name==="qq"&&pwd==="111"){
-                                    login(name,pwd).then((response)=>{
+                            if(usercode==="qq"&&userpwd==="111"){
+                                    login(usercode,userpwd).then((response)=>{
                                        let res = response.data;
                                         if(res.code === 0){
                                            history.push('/home')
