@@ -1,0 +1,91 @@
+
+*{
+    margin: 0;
+}
+.container {
+    width: 100%;
+    font-size: 25px;
+}
+
+.container .butn {
+    font-size: 28px;
+    position: absolute;
+    bottom: 270px;
+    right: 400px;
+}
+
+.register{
+    text-align: center;
+    font-size: 28px;
+    position: absolute;
+    right: 10px;
+    bottom: 200px;
+    right: 400px;
+}
+.dlym{
+    width: 100%;
+    height: 100vh;
+    color: skyblue;
+
+}
+
+.sygs{
+    width: 100%;
+    position: absolute;
+    left: 50px;
+    top: 6px;
+}
+
+.bt{
+    width: 50%;
+    position: absolute;
+    left: 80px;
+    top: 8px;
+}
+.dhl{
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    left: 1300px;
+
+}
+.whl{
+    height: 40px;
+    position: absolute;
+    bottom: 90px;
+    left: 650px;
+
+}
+
+.srks{
+    text-align: center;
+    font-size: 28px;
+    position: absolute;
+    right: 10px;
+    bottom: 170px;
+    right: 400px;
+}
+
+.lbt{
+    padding-bottom: 150px;
+    width: 100%;
+    height: 100vh;
+}
+
+.imge{
+    width: 100%;
+    height: 70vh;
+}
+.dbl{
+    height: 40px;
+    position: absolute;
+    bottom: 25px;
+    left: 570px;
+}
+.db{
+    height: 40px;
+    position: absolute;
+    bottom: 25px;
+    left: 570px;
+    font-size: 17px;
+}

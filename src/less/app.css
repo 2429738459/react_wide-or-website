@@ -23,8 +23,8 @@
 .sygs{
   width: 100%;
   position: absolute;
-  left: 60px;
-  top: 10px;
+  left: 50px;
+  top: 6px;
 }
 
 .bt{
@@ -79,4 +79,11 @@ height: 70vh;
   position: absolute;
   bottom: 25px;
   left: 570px;
+}
+.db{
+  height: 40px;
+  position: absolute;
+  bottom: 25px;
+  left: 570px;
+  font-size: 17px;
 }
