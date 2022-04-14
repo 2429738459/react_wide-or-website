@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useHistory} from 'react-router-dom'
 import axios from 'axios';
-import { color } from '@mui/system';
 import { ButtonGroup } from '@mui/material';
 
 
@@ -55,19 +54,11 @@ return <Box
                                         }
                                     })
                                 }
-                            }}>
-                        </ButtonGroup>
+                            }}><Button style={{width:"300px"}}>登陆</Button></ButtonGroup>
                          <br/>
                          <ButtonGroup>
                         <Button type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
-                            function a(){
-                            
-                                       
-                        
-                                           history.push('/signIn')
-                                      
-                                    
-                            }}>注册</Button>
+                            function a(){history.push('/signIn')}}>注册</Button>
                         </ButtonGroup>
                          </h2>
         </Box>
