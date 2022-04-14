@@ -1268,6 +1268,11 @@
   resolved "https://registry.npm.taobao.org/@bcoe/v8-coverage/download/@bcoe/v8-coverage-0.2.3.tgz"
   integrity sha1-daLotRy3WKdVPWgEpZMteqznXDk=
 
+"@brainhubeu/react-carousel@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.npmmirror.com/@brainhubeu/react-carousel/-/react-carousel-2.0.4.tgz#9b3d3e9699fca1617530e4cd242d6ef99a671917"
+  integrity sha512-FeN4IL0xg2Ld2YC7zk2asnIbECfsaV9ryiHE3KaDRy3VRPKhAdwAcsrUR4u0lzFMghzGIwtrnIfMnYjczwjAdg==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.npm.taobao.org/@cnakazawa/watch/download/@cnakazawa/watch-1.0.4.tgz"
@@ -4341,6 +4346,11 @@ dayjs@1.x:
   version "1.10.6"
   resolved "https://registry.nlark.com/dayjs/download/dayjs-1.10.6.tgz"
   integrity sha1-KIsqqC8thBimydTfWJjAc3rQKmM=
+
+debounce@^1.1.0:
+  version "1.2.1"
+  resolved "https://registry.npmmirror.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
@@ -9446,6 +9456,11 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   resolved "https://registry.npm.taobao.org/range-parser/download/range-parser-1.2.1.tgz"
   integrity sha1-PPNwI9GZ4cJNGlW4SADC8+ZGgDE=
 
+range@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/range/-/range-0.0.3.tgz#b5b8eb2463a516b624a563bd32b18fe89e70151b"
+  integrity sha512-OxK2nY2bmeEB4NxoBraQIBOOeOIxoBvm6yt8MA1kLappgkG3SyLf173iOtT5woWycrtESDD2g0Nl2yt8YPoUnw==
+
 raw-body@2.4.0:
   version "2.4.0"
   resolved "https://registry.nlark.com/raw-body/download/raw-body-2.4.0.tgz"
@@ -9811,6 +9826,14 @@ react-app-polyfill@^2.0.0:
     raf "^3.4.1"
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
+
+react-carousel@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npmmirror.com/react-carousel/-/react-carousel-4.3.0.tgz#de694c605664cb58174f20b02947cb559f519e89"
+  integrity sha512-t8MfCK877KuOaQFAsO6NwzkWdhcJG8hxSN5zYR7/cSfTNI6DnM/HswvgvdfajtiETuoLZRMXXLZv6QRLGETKjw==
+  dependencies:
+    debounce "^1.1.0"
+    range "0.0.3"
 
 react-dev-utils@^11.0.3:
   version "11.0.4"

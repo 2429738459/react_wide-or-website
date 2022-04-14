@@ -13,6 +13,7 @@ export default function Login(){
     const [pwd,setPwd] = useState('');
     const [confirm,setConfirm] = useState('');
     const [phone,setPhone] = useState('');
+    
 return <Box
         className='dlym'
         component="form"
@@ -66,7 +67,7 @@ return <Box
             <br/>
                     <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
                             function (){
-                            if(name==="qq"&&pwd==="111"&&confirm==="qq"&&phone==="11122222"){
+                            if(name==="qq"&&pwd==="111"&&confirm==="111"&&phone==="222"){
                                     login(name,pwd).then((response)=>{
                                        let res = response.data;
                                         if(res.code === 0){
@@ -79,11 +80,7 @@ return <Box
                          <br/>
                          <ButtonGroup>
                         <Button type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
-                            function a(){
-                           
-                                           history.push('/Login')
-                                       
-                            }}>已有账户,去登陆</Button>
+                            function a(){history.push('/Login')}}>已有账户,去登陆</Button>
                         </ButtonGroup>
                          </h2>
         </Box>

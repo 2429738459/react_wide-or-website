@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import '../less/home.css'
 import {Link} from 'react-router-dom'
-import {Table} from 'antd'
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 import axios from 'axios'
 export default function Home(){
     const [data,setData] = useState([]);
@@ -36,11 +37,12 @@ useEffect(()=>{
         <a className={index == 0 ? "checked":""} onClick={()=>{setIndex(0)}}>车型</a>
         <a className={index == 1 ? "checked":""} onClick={()=>{setIndex(1);}}>车牌</a>
         <a className={index == 2 ? "checked":""} onClick={()=>{setIndex(2);}}>改装</a>
-        <a className={index == 3 ? "checked":""} onClick={()=>{setIndex(2);}}>售后</a>
+        <a className={index == 3 ? "checked":""} onClick={()=>{setIndex(3);}}>售后</a>
         </div>
-        <Table columns={columns} 
-               dataSource={data}  />
-               <Link className="nav-link" to="/">回到首页</Link>
+        <Stack spacing={2}>
+      <Pagination count={10} color="primary" />
+    </Stack>
+               <Link className="nav-link" to="/home">回到首页</Link>
         </div>
     </div>
 }
