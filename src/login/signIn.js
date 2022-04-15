@@ -18,7 +18,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import FolderIcon from '@mui/icons-material/Folder';
 import RestoreIcon from '@mui/icons-material/Restore';
 import AnchorIcon from '@mui/icons-material/Anchor';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 
 export default function Login(){
@@ -119,30 +119,31 @@ return <Box
                         </ButtonGroup>
                          </h2>
                         </Paper>
-                        <BottomNavigation sx={{ width: 500 }} value={value}  className="whl">
-      <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<RestoreIcon />}
-      />
-       <BottomNavigationAction
-        label="Recents"
-        value="TwoWheeler"
-        icon={<TwoWheelerIcon />}
-      />
-      <BottomNavigationAction
-        label="Favorites"
-        value="favorites"
-        icon={<AnchorIcon />}
-      />
-      <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
-      />
-      <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-    </BottomNavigation>
-     <h6 className='db'>沈阳广合科技发展有限公司版权所有©2022   PLA备案 后期会有所更改 更改时间另请通知</h6>
+                        <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange} className="whl">
+                                    <BottomNavigationAction
+                                      value="recents"
+                                      icon={<RestoreIcon />}
+                                    />
+                                    <BottomNavigationAction
+                                      value="TwoWheeler"
+                                      icon={<TwoWheelerIcon />}
+                                    />
+                                    <BottomNavigationAction
+                                      value="favorites"
+                                      icon={<AnchorIcon />}
+                                    />
+                                    <BottomNavigationAction
+                                      value="AddIcCall"
+                                      icon={<AddIcCallIcon />}
+                                      onClick={
+                                        function a(){history.push('/callme')}}
+                                    />
+                                    <BottomNavigationAction  
+                                    value="folder" 
+                                    icon={<FolderIcon />} 
+                                    />
+                         </BottomNavigation>
+                <h6 className='db'>沈阳广合科技发展有限公司版权所有©2022   PLA备案 后期会有所更改 更改时间另请通知</h6>
         </Box>
             
 }

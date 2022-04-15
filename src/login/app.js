@@ -15,7 +15,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import FolderIcon from '@mui/icons-material/Folder';
 import RestoreIcon from '@mui/icons-material/Restore';
 import AnchorIcon from '@mui/icons-material/Anchor';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 export default function App(){
     const params = useParams();
@@ -32,8 +32,7 @@ export default function App(){
         <Button className='dhl'>后期修改</Button>
         <Button className='dhl'>广合科技</Button>
         <Button className='dhl'>Github</Button>
-        <Button className='dhl'>初代网页</Button>
-        <Button className='whl'>初代网页</Button>
+        <Button className='dhl'>嗨害嗨</Button>
       </ButtonGroup>
             <img src={logo} style={{ width:'5%',position:'absolute',left:0}}/>
         <h1 style={{color:"#000"}} className="bt">
@@ -68,7 +67,7 @@ export default function App(){
         icon={<RestoreIcon />}
       />
        <BottomNavigationAction
-        label="Recents"
+        label="TwoWheeler"
         value="TwoWheeler"
         icon={<TwoWheelerIcon />}
       />
@@ -78,9 +77,11 @@ export default function App(){
         icon={<AnchorIcon />}
       />
       <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
+        label="AddIcCall"
+        value="AddIcCall"
+        icon={<AddIcCallIcon />}
+        onClick={
+          function a(){history.push('/callme')}}
       />
       <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
     </BottomNavigation>
