@@ -4,8 +4,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useHistory} from 'react-router-dom'
 import axios from 'axios';
+import '../less/app.css'
 import Carousel, { slidesToShowPlugin }from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 import { ButtonGroup } from '@mui/material';
 import imgone from'../Imge/login.jpeg';
 import imgtwo from'../Imge/logine.jpeg';
@@ -20,14 +20,20 @@ import AnchorIcon from '@mui/icons-material/Anchor';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 
+
 export default function Login(){
     const history = useHistory();
     const [usercode,setUsercode] = useState('');
     const [userpwd,setUserpwd] = useState('');
     const [value, setValue] = React.useState('recents');
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-      };
+    const handleChange=()=> {
+      var url = "http://192.168.187.68:3000/login";
+      var data = {"usercode":usercode , "userpwd":userpwd} 
+      axios.post(url, data, ).then(res => {
+                console.log(res);
+      })
+      
+    }
     
 return <Box
         className='dlym'
@@ -88,17 +94,9 @@ return <Box
             <label>账号:{usercode}密码:{userpwd}</label>
             <br/>
             <br/>
-                    <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
-                            function (){
-                            if(usercode==="qq"&&userpwd==="111"){
-                                    login(usercode,userpwd).then((response)=>{
-                                       let res = response.data;
-                                        if(res.code === 0){
-                                           history.push('/home')
-                                        }
-                                    })
-                                }
-                            }}><Button style={{width:"300px"}} >登陆</Button></ButtonGroup>
+                    <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} >
+                      <Button style={{width:"300px"}} onClick={handleChange} >登陆</Button>
+                      </ButtonGroup>
                          <br/>
                          <ButtonGroup>
                         <Button type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
@@ -106,7 +104,7 @@ return <Box
                         </ButtonGroup>
                          </h2>
                         </Paper>
-                        <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange} className="whl">
+                        <BottomNavigation sx={{ width: 500 }} value={value} className="whl">
       <BottomNavigationAction
         label="Recents"
         value="recents"
@@ -132,12 +130,4 @@ return <Box
      <h6 className='db'>沈阳广合科技发展有限公司版权所有©2022   PLA备案 后期会有所更改 更改时间另请通知</h6>
         </Box>
             
-}
-
-function login (name,pwd) {
-  return axios.get("/mock/userdata.json",{
-        params:{
-            name,pwd
-        }
-    });
 }

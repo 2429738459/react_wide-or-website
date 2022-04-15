@@ -28,9 +28,13 @@ export default function Login(){
     const [userpword,setUserpword] = useState('');
     const [tel,setTel] = useState('');
     const [value, setValue] = React.useState('recents');
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-      };
+    const handleChange=()=> {
+      var url = "http://192.168.187.68:3000/register";
+      var data = {"usercode":usercode ,"userpwd":userpwd,"tel":tel} 
+      axios.post(url, data, ).then(res => {
+                console.log(res);
+      })
+    }
     
 return <Box
         className='dlym'
@@ -68,7 +72,7 @@ return <Box
 
 <Paper elevation={3} >
         <h2 style={{color:"#C0C0C0"}} className = 'register'>
-            欢迎登录
+            欢迎注册
             <br/>
             <br/>
         <TextField
@@ -106,17 +110,8 @@ return <Box
             <label>账号:{usercode}密码:{userpwd}<br/>确认密码:{userpwd}电话:{tel}</label>
             <br/>
             <br/>
-                    <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
-                            function (){
-                            if(usercode==="qq"&&userpwd==="111"){
-                                    login(usercode,userpwd).then((response)=>{
-                                       let res = response.data;
-                                        if(res.code === 0){
-                                           history.push('/Login')
-                                        }
-                                    })
-                                }
-                            }}><Button style={{width:"300px"}} >注册</Button></ButtonGroup>
+                    <ButtonGroup type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={handleChange}>
+                              <Button style={{width:"300px"}} >注册</Button></ButtonGroup>
                          <br/>
                          <ButtonGroup>
                         <Button type="primary"  style={{width:"300px",backgroundColor:"#fff"}} onClick={
@@ -124,7 +119,7 @@ return <Box
                         </ButtonGroup>
                          </h2>
                         </Paper>
-                        <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange} className="whl">
+                        <BottomNavigation sx={{ width: 500 }} value={value}  className="whl">
       <BottomNavigationAction
         label="Recents"
         value="recents"
@@ -152,10 +147,3 @@ return <Box
             
 }
 
-function login (name,pwd) {
-  return axios.get("/mock/userdata.json",{
-        params:{
-            name,pwd
-        }
-    });
-}
